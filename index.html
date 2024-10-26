@@ -81,7 +81,7 @@
 </head>
 <body>
   <div class="logo">
-    <img src="./logo.png" alt="Logo" style="max-width: 200px;">
+    <img src="./MEGALogoLight.png" alt="Logo" style="max-width: 200px;">
   </div>
 
   <div class="quiz-container" id="quiz">
@@ -156,6 +156,25 @@
       "BIM levels of detail include LOD-100, LOD-200, LOD-300, LOD-400, and LOD-500."
     ];
 
+    // Check if the quiz was already completed in the last 48 hours
+    window.onload = function() {
+      const quizCompletedAt = localStorage.getItem('quizCompletedAt');
+      const expirationTime = 48 * 60 * 60 * 1000; // 48 hours in milliseconds
+
+      if (quizCompletedAt) {
+        const currentTime = new Date().getTime();
+        const timeElapsed = currentTime - quizCompletedAt;
+
+        if (timeElapsed < expirationTime) {
+          document.getElementById('quiz').classList.add('hidden');
+          alert("You have already completed the quiz. Please try again after 48 hours.");
+        } else {
+          localStorage.removeItem('quizCompleted');
+          localStorage.removeItem('quizCompletedAt');
+        }
+      }
+    }
+
     function submitQuiz() {
       let correctAnswers = 0;
       const answers = document.querySelectorAll('input[type="radio"]:checked');
@@ -177,6 +196,8 @@
       document.getElementById('results').classList.remove('hidden');
 
       if (correctAnswers >= 4) {
+        localStorage.setItem('quizCompleted', 'true');
+        localStorage.setItem('quizCompletedAt', new Date().getTime());
         window.location.href = "https://forms.gle/wfAaNvZKMR7z3YMM6";
       } else {
         document.getElementById('failureMessage').classList.remove('hidden');
