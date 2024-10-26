@@ -16,6 +16,10 @@
       flex-direction: column;
       min-height: 100vh;
     }
+    .logo {
+      margin-bottom: 30px;
+      text-align: center;
+    }
     .quiz-container {
       background-color: #fff;
       padding: 30px;
@@ -40,6 +44,13 @@
       display: block;
       margin-bottom: 8px;
     }
+    .arabic {
+      font-size: 16px;
+      font-weight: bold;
+      text-align: right;
+      direction: rtl;
+      color: #444;
+    }
     button {
       display: block;
       width: 100%;
@@ -53,54 +64,75 @@
       transition: background-color 0.3s;
       margin-top: 20px;
     }
+    .hidden {
+      display: none;
+    }
     #results {
       margin-top: 30px;
       text-align: center;
     }
+    .correct-answer {
+      color: green;
+    }
+    .wrong-answer {
+      color: red;
+    }
   </style>
 </head>
 <body>
+  <div class="logo">
+    <img src="./logo.png" alt="Logo" style="max-width: 200px;">
+  </div>
+
   <div class="quiz-container" id="quiz">
     <h2>BIM Quiz</h2>
     <div class="question">
       <p>1. The BIM process has four stages: Plan, Design, Build, and Operate.</p>
-      <label><input type="radio" name="q1" value="correct"> True</label>
-      <label><input type="radio" name="q1" value="wrong"> False</label>
+      <p class="arabic">يتكون عملية BIM من أربع مراحل: التخطيط، التصميم، البناء، التشغيل.</p>
+      <label><input type="radio" name="q1" value="correct"> True / صحيح</label>
+      <label><input type="radio" name="q1" value="wrong"> False / خطأ</label>
     </div>
     <div class="question">
       <p>2. BIM dimensions include 3D, 4D, 5D, 6D, and 7D.</p>
-      <label><input type="radio" name="q2" value="correct"> True</label>
-      <label><input type="radio" name="q2" value="wrong"> False</label>
+      <p class="arabic">الأبعاد المختلفة لـ BIM هي: 3D، 4D، 5D، 6D، 7D.</p>
+      <label><input type="radio" name="q2" value="correct"> True / صحيح</label>
+      <label><input type="radio" name="q2" value="wrong"> False / خطأ</label>
     </div>
     <div class="question">
       <p>3. BIM project roles include Appointing Party, Lead appointed party, and Other appointed parties.</p>
-      <label><input type="radio" name="q3" value="correct"> True</label>
-      <label><input type="radio" name="q3" value="wrong"> False</label>
+      <p class="arabic">تشمل الأدوار في مشروع BIM: الطرف المعين، الطرف الرئيسي المعين، والأطراف المعينة الأخرى.</p>
+      <label><input type="radio" name="q3" value="correct"> True / صحيح</label>
+      <label><input type="radio" name="q3" value="wrong"> False / خطأ</label>
     </div>
     <div class="question">
       <p>4. The company’s CEO is responsible for managing the digital model.</p>
-      <label><input type="radio" name="q4" value="wrong"> True</label>
-      <label><input type="radio" name="q4" value="correct"> False</label>
+      <p class="arabic">مسؤولية إدارة النموذج الرقمي على مستوى الشركة تقع على عاتق المدير التنفيذي.</p>
+      <label><input type="radio" name="q4" value="wrong"> True / صحيح</label>
+      <label><input type="radio" name="q4" value="correct"> False / خطأ</label>
     </div>
     <div class="question">
       <p>5. Post-construction activities include Model coordination and Asset information management.</p>
-      <label><input type="radio" name="q5" value="correct"> True</label>
-      <label><input type="radio" name="q5" value="wrong"> False</label>
+      <p class="arabic">من الأنشطة التي تحدث في مرحلة ما بعد البناء هي: تنسيق النموذج وإدارة معلومات الأصول.</p>
+      <label><input type="radio" name="q5" value="correct"> True / صحيح</label>
+      <label><input type="radio" name="q5" value="wrong"> False / خطأ</label>
     </div>
     <div class="question">
       <p>6. The BIM Execution Plan (BEP) is developed based on the Employer’s Information Requirements (EIR).</p>
-      <label><input type="radio" name="q6" value="correct"> True</label>
-      <label><input type="radio" name="q6" value="wrong"> False</label>
+      <p class="arabic">يتم إعداد خطة تنفيذ BIM (BEP) استجابةً لمتطلبات معلومات صاحب العمل (EIR).</p>
+      <label><input type="radio" name="q6" value="correct"> True / صحيح</label>
+      <label><input type="radio" name="q6" value="wrong"> False / خطأ</label>
     </div>
     <div class="question">
       <p>7. The BIM process cycle only goes from design to build.</p>
-      <label><input type="radio" name="q7" value="wrong"> True</label>
-      <label><input type="radio" name="q7" value="correct"> False</label>
+      <p class="arabic">دورة عملية BIM تبدأ من التصميم إلى البناء فقط.</p>
+      <label><input type="radio" name="q7" value="wrong"> True / صحيح</label>
+      <label><input type="radio" name="q7" value="correct"> False / خطأ</label>
     </div>
     <div class="question">
       <p>8. BIM levels of detail include LOD-100, LOD-200, LOD-300, LOD-400, and LOD-500.</p>
-      <label><input type="radio" name="q8" value="correct"> True</label>
-      <label><input type="radio" name="q8" value="wrong"> False</label>
+      <p class="arabic">مستوى التفاصيل في BIM يتضمن: LOD-100، LOD-200، LOD-300، LOD-400، LOD-500.</p>
+      <label><input type="radio" name="q8" value="correct"> True / صحيح</label>
+      <label><input type="radio" name="q8" value="wrong"> False / خطأ</label>
     </div>
     <button onclick="submitQuiz()">Submit</button>
   </div>
@@ -108,21 +140,46 @@
   <div id="results" class="hidden">
     <h2>Your Results</h2>
     <p id="score"></p>
+    <ul id="correctAnswers"></ul>
+    <p id="failureMessage" class="hidden" style="color: red;">You did not pass. Here are the correct answers:</p>
   </div>
 
   <script>
+    const correctAnswersList = [
+      "The BIM process has four stages: Plan, Design, Build, and Operate.",
+      "BIM dimensions include 3D, 4D, 5D, 6D, and 7D.",
+      "BIM project roles include Appointing Party, Lead appointed party, and Other appointed parties.",
+      "The company’s CEO is not responsible for managing the digital model; it’s the BIM Coordinator’s role.",
+      "Post-construction activities include Model coordination and Asset information management.",
+      "The BIM Execution Plan (BEP) is developed based on the Employer’s Information Requirements (EIR).",
+      "The BIM process cycle does not only go from design to build; it also includes other stages.",
+      "BIM levels of detail include LOD-100, LOD-200, LOD-300, LOD-400, and LOD-500."
+    ];
+
     function submitQuiz() {
       let correctAnswers = 0;
       const answers = document.querySelectorAll('input[type="radio"]:checked');
-      answers.forEach(answer => {
-        if (answer.value === "correct") correctAnswers++;
+      const correctAnswersDisplay = document.getElementById('correctAnswers');
+      correctAnswersDisplay.innerHTML = '';
+
+      answers.forEach((answer, index) => {
+        const listItem = document.createElement('li');
+        if (answer.value === "correct") {
+          correctAnswers++;
+        } else {
+          listItem.textContent = correctAnswersList[index];
+          correctAnswersDisplay.appendChild(listItem);
+        }
       });
+
+      document.getElementById('score').textContent = `You got ${correctAnswers} out of 8 correct.`;
       document.getElementById('quiz').classList.add('hidden');
       document.getElementById('results').classList.remove('hidden');
-      document.getElementById('score').textContent = `You got ${correctAnswers} out of 8 correct.`;
-      
+
       if (correctAnswers >= 4) {
         window.location.href = "https://forms.gle/wfAaNvZKMR7z3YMM6";
+      } else {
+        document.getElementById('failureMessage').classList.remove('hidden');
       }
     }
   </script>
