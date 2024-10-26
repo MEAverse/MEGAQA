@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KNX Quiz</title>
+  <title>BIM Quiz</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -16,68 +16,30 @@
       flex-direction: column;
       min-height: 100vh;
     }
-
-    .content-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      max-width: 800px;
-      padding: 20px;
-    }
-
-    .logo {
-      margin-bottom: 30px;
-    }
-
-    .logo img {
-      max-width: 200px;
-      height: auto;
-    }
-
     .quiz-container {
       background-color: #fff;
       padding: 30px;
       border-radius: 10px;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
       width: 100%;
+      max-width: 800px;
     }
-
     h2 {
       text-align: center;
       color: #333;
       margin-bottom: 20px;
     }
-
     .question {
       margin-bottom: 25px;
-      background-color: #f5f5f5; /* لون رمادي فاتح */
       padding: 15px;
+      background-color: #f5f5f5;
       border-radius: 8px;
     }
-
-    .question p {
-      font-size: 20px;
-      color: #444;
-      line-height: 1.5;
-      margin-bottom: 10px;
-    }
-
-    .arabic {
-      font-size: 16px;
-      font-weight: bold;
-      text-align: right;
-      direction: rtl;
-      color: #444;
-    }
-
     .question label {
       font-size: 18px;
-      color: #555;
       display: block;
       margin-bottom: 8px;
     }
-
     button {
       display: block;
       width: 100%;
@@ -91,195 +53,78 @@
       transition: background-color 0.3s;
       margin-top: 20px;
     }
-
-    button:hover {
-      background-color: #0056b3;
-    }
-
-    .hidden {
-      display: none;
-    }
-
     #results {
       margin-top: 30px;
       text-align: center;
     }
-
-    .correct-answer {
-      color: green;
-    }
-
-    .wrong-answer {
-      color: red;
-    }
-
-    /* Responsive styling for mobile */
-    @media (max-width: 600px) {
-      .quiz-container {
-        padding: 20px;
-      }
-
-      .question p {
-        font-size: 18px;
-      }
-
-      .question label {
-        font-size: 16px;
-      }
-
-      button {
-        font-size: 16px;
-        padding: 10px;
-      }
-    }
   </style>
 </head>
 <body>
-
-  <div class="content-container">
-    <div class="logo" id="logo">
-      <img src="./MEGALogolight.png" alt="Logo">
+  <div class="quiz-container" id="quiz">
+    <h2>BIM Quiz</h2>
+    <div class="question">
+      <p>1. The BIM process has four stages: Plan, Design, Build, and Operate.</p>
+      <label><input type="radio" name="q1" value="correct"> True</label>
+      <label><input type="radio" name="q1" value="wrong"> False</label>
     </div>
-
-    <div class="quiz-container" id="quiz">
-      <h2>KNX Quiz</h2>
-      
-      <div class="question">
-        <p>1. KNX offers installers the opportunity to customize installations according to customer requirements.</p>
-        <p class="arabic">هل يوفر KNX للمثبتين فرصة تخصيص التركيبات وفقًا لمتطلبات العملاء؟</p>
-        <label><input type="radio" name="q1" value="correct"> True / صحيح</label>
-        <label><input type="radio" name="q1" value="wrong"> False / خطأ</label>
-      </div>
-      
-      <div class="question">
-        <p>2. A central function influencing many application fields in a building (lighting, blinds, heating/cooling, …) can be easily implemented with KNX.</p>
-        <p class="arabic">يمكن تنفيذ وظيفة مركزية تؤثر على العديد من مجالات التطبيق في المبنى (الإضاءة، الستائر، التدفئة/التبريد، ...) بسهولة باستخدام KNX.</p>
-        <label><input type="radio" name="q2" value="correct"> True / صحيح</label>
-        <label><input type="radio" name="q2" value="wrong"> False / خطأ</label>
-      </div>
-
-      <div class="question">
-        <p>3. It is possible to install two power supply units both with an output current of 320 mA in one line.</p>
-        <p class="arabic">يمكن تركيب وحدتي تزويد بالطاقة، كل منهما بتيار إخراج 320 مللي أمبير، في خط واحد.</p>
-        <label><input type="radio" name="q3" value="correct"> True / صحيح</label>
-        <label><input type="radio" name="q3" value="wrong"> False / خطأ</label>
-      </div>
-
-      <div class="question">
-        <p>4. The programming button on a KNX product must be pressed in order to verify whether the individual address has been correctly assigned to a KNX device.</p>
-        <p class="arabic">يجب الضغط على زر البرمجة في منتج KNX للتحقق مما إذا كان قد تم تعيين العنوان الفردي بشكل صحيح للجهاز.</p>
-        <label><input type="radio" name="q4" value="correct"> True / صحيح</label>
-        <label><input type="radio" name="q4" value="wrong"> False / خطأ</label>
-      </div>
-
-      <div class="question">
-        <p>5. KNX offers customers increased safety.</p>
-        <p class="arabic">يوفر KNX زيادة في الأمان للعملاء.</p>
-        <label><input type="radio" name="q5" value="correct"> True / صحيح</label>
-        <label><input type="radio" name="q5" value="wrong"> False / خطأ</label>
-      </div>
-
-      <div class="question">
-        <p>6. The proper functioning of a sensor in a KNX installation can be checked by telegram recording and analysis.</p>
-        <p class="arabic">يمكن التحقق من الأداء السليم لجهاز الاستشعار في تركيب KNX من خلال تسجيل وتحليل التلغراف.</p>
-        <label><input type="radio" name="q6" value="correct"> True / صحيح</label>
-        <label><input type="radio" name="q6" value="wrong"> False / خطأ</label>
-      </div>
-
-      <div class="question">
-        <p>7. A KNX installation can be connected to other systems (AV system, logic controller, Building Management System) with binary inputs and binary outputs.</p>
-        <p class="arabic">يمكن توصيل تركيب KNX بأنظمة أخرى (نظام AV، جهاز تحكم منطقي، نظام إدارة المباني) باستخدام مداخل ومخارج ثنائية.</p>
-        <label><input type="radio" name="q7" value="correct"> True / صحيح</label>
-        <label><input type="radio" name="q7" value="wrong"> False / خطأ</label>
-      </div>
-
-      <div class="question">
-        <p>8. The version of the system software included in a bus device is identified by its “mask version" or "device descriptor type 0".</p>
-        <p class="arabic">يتم تحديد إصدار برنامج النظام المضمن في جهاز الحافلة من خلال "إصدار القناع" أو "نوع واصف الجهاز 0".</p>
-        <label><input type="radio" name="q8" value="correct"> True / صحيح</label>
-        <label><input type="radio" name="q8" value="wrong"> False / خطأ</label>
-      </div>
-      
-      <button onclick="submitQuiz()">Submit</button>
+    <div class="question">
+      <p>2. BIM dimensions include 3D, 4D, 5D, 6D, and 7D.</p>
+      <label><input type="radio" name="q2" value="correct"> True</label>
+      <label><input type="radio" name="q2" value="wrong"> False</label>
     </div>
+    <div class="question">
+      <p>3. BIM project roles include Appointing Party, Lead appointed party, and Other appointed parties.</p>
+      <label><input type="radio" name="q3" value="correct"> True</label>
+      <label><input type="radio" name="q3" value="wrong"> False</label>
+    </div>
+    <div class="question">
+      <p>4. The company’s CEO is responsible for managing the digital model.</p>
+      <label><input type="radio" name="q4" value="wrong"> True</label>
+      <label><input type="radio" name="q4" value="correct"> False</label>
+    </div>
+    <div class="question">
+      <p>5. Post-construction activities include Model coordination and Asset information management.</p>
+      <label><input type="radio" name="q5" value="correct"> True</label>
+      <label><input type="radio" name="q5" value="wrong"> False</label>
+    </div>
+    <div class="question">
+      <p>6. The BIM Execution Plan (BEP) is developed based on the Employer’s Information Requirements (EIR).</p>
+      <label><input type="radio" name="q6" value="correct"> True</label>
+      <label><input type="radio" name="q6" value="wrong"> False</label>
+    </div>
+    <div class="question">
+      <p>7. The BIM process cycle only goes from design to build.</p>
+      <label><input type="radio" name="q7" value="wrong"> True</label>
+      <label><input type="radio" name="q7" value="correct"> False</label>
+    </div>
+    <div class="question">
+      <p>8. BIM levels of detail include LOD-100, LOD-200, LOD-300, LOD-400, and LOD-500.</p>
+      <label><input type="radio" name="q8" value="correct"> True</label>
+      <label><input type="radio" name="q8" value="wrong"> False</label>
+    </div>
+    <button onclick="submitQuiz()">Submit</button>
   </div>
 
   <div id="results" class="hidden">
     <h2>Your Results</h2>
     <p id="score"></p>
-    <ul id="correctAnswers"></ul>
-    <button id="closeBtn" class="hidden" onclick="goToGoogleForm()">Close</button>
   </div>
 
   <script>
-    const correctAnswersList = [
-      "KNX offers installers the opportunity to customize installations according to customer requirements.",
-      "A central function influencing many application fields in a building can be easily implemented with KNX.",
-      "It is possible to install two power supply units with an output current of 320 mA in one line.",
-      "The programming button on a KNX product must be pressed to verify the correct assignment of the individual address.",
-      "KNX offers customers increased safety.",
-      "The proper functioning of a sensor can be checked by telegram recording and analysis.",
-      "A KNX installation can be connected to other systems using binary inputs and outputs.",
-      "The system software version is identified by its 'mask version' or 'device descriptor type 0'."
-    ];
-
-    // Check if the quiz was already completed in the last 48 hours
-    window.onload = function() {
-      const quizCompletedAt = localStorage.getItem('quizCompletedAt');
-      const expirationTime = 48 * 60 * 60 * 1000; // 48 hours in milliseconds
-
-      if (quizCompletedAt) {
-        const currentTime = new Date().getTime();
-        const timeElapsed = currentTime - quizCompletedAt;
-
-        if (timeElapsed < expirationTime) {
-          document.getElementById('quiz').classList.add('hidden');
-          document.getElementById('logo').style.display = 'flex';
-          alert("You have already completed the quiz. Please try again after 48 hours.");
-        } else {
-          localStorage.removeItem('quizCompleted');
-          localStorage.removeItem('quizCompletedAt');
-        }
-      }
-    }
-
     function submitQuiz() {
       let correctAnswers = 0;
       const answers = document.querySelectorAll('input[type="radio"]:checked');
-      const correctAnswersDisplay = document.getElementById('correctAnswers');
-      correctAnswersDisplay.innerHTML = '';
-
-      answers.forEach((answer, index) => {
-        const listItem = document.createElement('li');
-        if (answer.value === "correct") {
-          correctAnswers++;
-          listItem.className = 'correct-answer';
-          listItem.textContent = correctAnswersList[index];
-        } else {
-          listItem.className = 'wrong-answer';
-          listItem.textContent = correctAnswersList[index];
-        }
-        correctAnswersDisplay.appendChild(listItem);
+      answers.forEach(answer => {
+        if (answer.value === "correct") correctAnswers++;
       });
-
-      document.getElementById('score').textContent = `You got ${correctAnswers} out of 8 correct.`;
       document.getElementById('quiz').classList.add('hidden');
       document.getElementById('results').classList.remove('hidden');
-
+      document.getElementById('score').textContent = `You got ${correctAnswers} out of 8 correct.`;
+      
       if (correctAnswers >= 4) {
-        document.getElementById('closeBtn').classList.remove('hidden');
-      } else {
-        localStorage.setItem('quizCompleted', 'true');
-        localStorage.setItem('quizCompletedAt', new Date().getTime());
+        window.location.href = "https://forms.gle/wfAaNvZKMR7z3YMM6";
       }
     }
-
-    function goToGoogleForm() {
-      localStorage.setItem('quizCompleted', 'true');
-      localStorage.setItem('quizCompletedAt', new Date().getTime());
-      window.location.href = "https://forms.gle/F3P4GwT5PJ7io87K9";
-    }
   </script>
-
 </body>
 </html>
