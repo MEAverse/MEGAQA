@@ -81,7 +81,7 @@
 </head>
 <body>
   <div class="logo">
-    <img src="./MEGALogoLight.png" alt="Logo" style="max-width: 200px;">
+    <img src="MEGALogolight.png" alt="Logo" style="max-width: 200px;">
   </div>
 
   <div class="quiz-container" id="quiz">
@@ -185,10 +185,13 @@
         const listItem = document.createElement('li');
         if (answer.value === "correct") {
           correctAnswers++;
-        } else {
+          listItem.className = 'correct-answer';
           listItem.textContent = correctAnswersList[index];
-          correctAnswersDisplay.appendChild(listItem);
+        } else {
+          listItem.className = 'wrong-answer';
+          listItem.textContent = correctAnswersList[index];
         }
+        correctAnswersDisplay.appendChild(listItem);
       });
 
       document.getElementById('score').textContent = `You got ${correctAnswers} out of 8 correct.`;
