@@ -96,7 +96,68 @@
       <label><input type="radio" name="q1" value="wrong"> 9 Amps / 9 أمبير</label>
     </div>
 
-    <!-- Add the rest of your questions here -->
+    <div class="question">
+      <p>2. What electrical component resists the flow of electric current?</p>
+      <p class="arabic">ما هو المكون الكهربائي الذي يقاوم تدفق التيار الكهربائي؟</p>
+      <label><input type="radio" name="q2" value="wrong"> Capacitor / المكثف</label>
+      <label><input type="radio" name="q2" value="correct"> Resistor / المقاومة</label>
+      <label><input type="radio" name="q2" value="wrong"> Inductor / الملف</label>
+      <label><input type="radio" name="q2" value="wrong"> Battery / البطارية</label>
+    </div>
+
+    <div class="question">
+      <p>3. In which type of connection is the electric current constant in all components?</p>
+      <p class="arabic">في أي نوع من التوصيل يكون التيار الكهربائي ثابتًا في جميع المكونات؟</p>
+      <label><input type="radio" name="q3" value="wrong"> Parallel / التوصيل على التوازي</label>
+      <label><input type="radio" name="q3" value="correct"> Series / التوصيل على التوالي</label>
+      <label><input type="radio" name="q3" value="wrong"> Mixed / التوصيل المختلط</label>
+      <label><input type="radio" name="q3" value="wrong"> Sequential / التوصيل المتسلسل</label>
+    </div>
+
+    <div class="question">
+      <p>4. What instrument is used to measure the electric potential difference between two points?</p>
+      <p class="arabic">ما هو الجهاز المستخدم لقياس فرق الجهد الكهربائي بين نقطتين؟</p>
+      <label><input type="radio" name="q4" value="wrong"> Ammeter / الأميتر</label>
+      <label><input type="radio" name="q4" value="correct"> Voltmeter / الفولتميتر</label>
+      <label><input type="radio" name="q4" value="wrong"> Ohmmeter / الأوميتر</label>
+      <label><input type="radio" name="q4" value="wrong"> Wattmeter / الواتميتر</label>
+    </div>
+
+    <div class="question">
+      <p>5. If the resistance in a circuit is 10 ohms and the voltage is 20 volts, what is the current?</p>
+      <p class="arabic">إذا كانت المقاومة في دائرة كهربائية تساوي 10 أوم، وفرق الجهد 20 فولت، فما هي شدة التيار المار في الدائرة؟</p>
+      <label><input type="radio" name="q5" value="wrong"> 0.5 Amps / 0.5 أمبير</label>
+      <label><input type="radio" name="q5" value="correct"> 2 Amps / 2 أمبير</label>
+      <label><input type="radio" name="q5" value="wrong"> 10 Amps / 10 أمبير</label>
+      <label><input type="radio" name="q5" value="wrong"> 200 Amps / 200 أمبير</label>
+    </div>
+
+    <div class="question">
+      <p>6. Which component stores electrical energy in an electric field?</p>
+      <p class="arabic">ما هو المكون الذي يخزن الطاقة الكهربائية في مجال كهربائي؟</p>
+      <label><input type="radio" name="q6" value="wrong"> Resistor / المقاومة</label>
+      <label><input type="radio" name="q6" value="wrong"> Inductor / الملف</label>
+      <label><input type="radio" name="q6" value="correct"> Capacitor / المكثف</label>
+      <label><input type="radio" name="q6" value="wrong"> Diode / الديود</label>
+    </div>
+
+    <div class="question">
+      <p>7. In a parallel connection, how is the voltage across each component?</p>
+      <p class="arabic">في التوصيل على التوازي، كيف يكون فرق الجهد عبر كل مكون؟</p>
+      <label><input type="radio" name="q7" value="wrong"> Different / مختلف</label>
+      <label><input type="radio" name="q7" value="correct"> Equal / متساوي</label>
+      <label><input type="radio" name="q7" value="wrong"> Depends on resistance / يعتمد على المقاومة</label>
+      <label><input type="radio" name="q7" value="wrong"> Depends on current / يعتمد على التيار</label>
+    </div>
+
+    <div class="question">
+      <p>8. What is Ohm's Law?</p>
+      <p class="arabic">ما هو قانون أوم؟</p>
+      <label><input type="radio" name="q8" value="correct"> V = I × R</label>
+      <label><input type="radio" name="q8" value="wrong"> V = I / R</label>
+      <label><input type="radio" name="q8" value="wrong"> V = R / I</label>
+      <label><input type="radio" name="q8" value="wrong"> V = I² × R</label>
+    </div>
 
     <button onclick="submitQuiz()">Submit</button>
   </div>
@@ -111,7 +172,13 @@
   <script>
     const correctAnswersList = [
       "The current flowing in a circuit with resistors in series is 2 Amps.",
-      // Add correct answers for each question
+      "The resistor resists the flow of electric current.",
+      "Current is constant in series connection.",
+      "A voltmeter measures electric potential difference between two points.",
+      "The current in the circuit is 2 Amps.",
+      "A capacitor stores electrical energy in an electric field.",
+      "Voltage is equal across each component in a parallel connection.",
+      "Ohm's Law is V = I × R."
     ];
 
     // Check if the quiz was already completed in the last 48 hours
