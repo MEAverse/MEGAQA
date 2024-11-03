@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Electrical Circuit Quiz</title>
+  <title>English Quiz</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -71,12 +71,6 @@
       margin-top: 30px;
       text-align: center;
     }
-    .correct-answer {
-      color: green;
-    }
-    .wrong-answer {
-      color: red;
-    }
   </style>
 </head>
 <body>
@@ -85,150 +79,30 @@
   </div>
 
   <div class="quiz-container" id="quiz">
-    <h2>Electrical Circuit Quiz</h2>
+    <h2>English Quiz</h2>
 
     <div class="question">
-      <p>1. In a circuit with three resistors of values 4 ohm, 6 ohm, and 8 ohm connected in series, with a source voltage of 36 volts, what is the current flowing in the circuit?</p>
-      <p class="arabic">في دائرة تحتوي على ثلاث مقاومات متصلة على التوالي بقيم 4 أوم، 6 أوم، و8 أوم، ويوجد جهد مصدر قدره 36 فولت. احسب التيار المار في الدائرة.</p>
-      <label><input type="radio" name="q1" value="correct"> 2 Amps / 2 أمبير</label>
-      <label><input type="radio" name="q1" value="wrong"> 5 Amps / 5 أمبير</label>
-      <label><input type="radio" name="q1" value="wrong"> 4 Amps / 4 أمبير</label>
-      <label><input type="radio" name="q1" value="wrong"> 9 Amps / 9 أمبير</label>
-    </div>
-
-    <div class="question">
-      <p>2. What electrical component resists the flow of electric current?</p>
-      <p class="arabic">ما هو المكون الكهربائي الذي يقاوم تدفق التيار الكهربائي؟</p>
-      <label><input type="radio" name="q2" value="wrong"> Capacitor / المكثف</label>
-      <label><input type="radio" name="q2" value="correct"> Resistor / المقاومة</label>
-      <label><input type="radio" name="q2" value="wrong"> Inductor / الملف</label>
-      <label><input type="radio" name="q2" value="wrong"> Battery / البطارية</label>
-    </div>
-
-    <div class="question">
-      <p>3. In which type of connection is the electric current constant in all components?</p>
-      <p class="arabic">في أي نوع من التوصيل يكون التيار الكهربائي ثابتًا في جميع المكونات؟</p>
-      <label><input type="radio" name="q3" value="wrong"> Parallel / التوصيل على التوازي</label>
-      <label><input type="radio" name="q3" value="correct"> Series / التوصيل على التوالي</label>
-      <label><input type="radio" name="q3" value="wrong"> Mixed / التوصيل المختلط</label>
-      <label><input type="radio" name="q3" value="wrong"> Sequential / التوصيل المتسلسل</label>
-    </div>
-
-    <div class="question">
-      <p>4. What instrument is used to measure the electric potential difference between two points?</p>
-      <p class="arabic">ما هو الجهاز المستخدم لقياس فرق الجهد الكهربائي بين نقطتين؟</p>
-      <label><input type="radio" name="q4" value="wrong"> Ammeter / الأميتر</label>
-      <label><input type="radio" name="q4" value="correct"> Voltmeter / الفولتميتر</label>
-      <label><input type="radio" name="q4" value="wrong"> Ohmmeter / الأوميتر</label>
-      <label><input type="radio" name="q4" value="wrong"> Wattmeter / الواتميتر</label>
-    </div>
-
-    <div class="question">
-      <p>5. If the resistance in a circuit is 10 ohms and the voltage is 20 volts, what is the current?</p>
-      <p class="arabic">إذا كانت المقاومة في دائرة كهربائية تساوي 10 أوم، وفرق الجهد 20 فولت، فما هي شدة التيار المار في الدائرة؟</p>
-      <label><input type="radio" name="q5" value="wrong"> 0.5 Amps / 0.5 أمبير</label>
-      <label><input type="radio" name="q5" value="correct"> 2 Amps / 2 أمبير</label>
-      <label><input type="radio" name="q5" value="wrong"> 10 Amps / 10 أمبير</label>
-      <label><input type="radio" name="q5" value="wrong"> 200 Amps / 200 أمبير</label>
-    </div>
-
-    <div class="question">
-      <p>6. Which component stores electrical energy in an electric field?</p>
-      <p class="arabic">ما هو المكون الذي يخزن الطاقة الكهربائية في مجال كهربائي؟</p>
-      <label><input type="radio" name="q6" value="wrong"> Resistor / المقاومة</label>
-      <label><input type="radio" name="q6" value="wrong"> Inductor / الملف</label>
-      <label><input type="radio" name="q6" value="correct"> Capacitor / المكثف</label>
-      <label><input type="radio" name="q6" value="wrong"> Diode / الديود</label>
-    </div>
-
-    <div class="question">
-      <p>7. In a parallel connection, how is the voltage across each component?</p>
-      <p class="arabic">في التوصيل على التوازي، كيف يكون فرق الجهد عبر كل مكون؟</p>
-      <label><input type="radio" name="q7" value="wrong"> Different / مختلف</label>
-      <label><input type="radio" name="q7" value="correct"> Equal / متساوي</label>
-      <label><input type="radio" name="q7" value="wrong"> Depends on resistance / يعتمد على المقاومة</label>
-      <label><input type="radio" name="q7" value="wrong"> Depends on current / يعتمد على التيار</label>
-    </div>
-
-    <div class="question">
-      <p>8. What is Ohm's Law?</p>
-      <p class="arabic">ما هو قانون أوم؟</p>
-      <label><input type="radio" name="q8" value="correct"> V = I × R</label>
-      <label><input type="radio" name="q8" value="wrong"> V = I / R</label>
-      <label><input type="radio" name="q8" value="wrong"> V = R / I</label>
-      <label><input type="radio" name="q8" value="wrong"> V = I² × R</label>
+      <p>Introduce yourself</p>
+      <p class="arabic">قدم نفسك</p>
+      <label>
+        <input type="text" id="response" placeholder="Enter your introduction here" style="width: 100%; padding: 8px; font-size: 16px;">
+      </label>
     </div>
 
     <button onclick="submitQuiz()">Submit</button>
   </div>
 
-  <div id="results" class="hidden">
-    <h2>Your Results</h2>
-    <p id="score"></p>
-    <ul id="correctAnswers"></ul>
-    <p id="failureMessage" class="hidden" style="color: red;">You did not pass. Here are the correct answers:</p>
-  </div>
-
   <script>
-    const correctAnswersList = [
-      "The current flowing in a circuit with resistors in series is 2 Amps.",
-      "The resistor resists the flow of electric current.",
-      "Current is constant in series connection.",
-      "A voltmeter measures electric potential difference between two points.",
-      "The current in the circuit is 2 Amps.",
-      "A capacitor stores electrical energy in an electric field.",
-      "Voltage is equal across each component in a parallel connection.",
-      "Ohm's Law is V = I × R."
-    ];
-
-    // Check if the quiz was already completed in the last 48 hours
-    window.onload = function() {
-      const quizCompletedAt = localStorage.getItem('quizCompletedAt');
-      const expirationTime = 48 * 60 * 60 * 1000; // 48 hours in milliseconds
-
-      if (quizCompletedAt) {
-        const currentTime = new Date().getTime();
-        const timeElapsed = currentTime - quizCompletedAt;
-
-        if (timeElapsed < expirationTime) {
-          document.getElementById('quiz').classList.add('hidden');
-          alert("You have already completed the quiz. Please try again after 48 hours.");
-        } else {
-          localStorage.removeItem('quizCompleted');
-          localStorage.removeItem('quizCompletedAt');
-        }
-      }
-    }
-
     function submitQuiz() {
-      let correctAnswers = 0;
-      const answers = document.querySelectorAll('input[type="radio"]:checked');
-      const correctAnswersDisplay = document.getElementById('correctAnswers');
-      correctAnswersDisplay.innerHTML = '';
+      const response = document.getElementById('response').value.trim();
 
-      answers.forEach((answer, index) => {
-        const listItem = document.createElement('li');
-        if (answer.value === "correct") {
-          correctAnswers++;
-          listItem.className = 'correct-answer';
-          listItem.textContent = correctAnswersList[index];
-        } else {
-          listItem.className = 'wrong-answer';
-          listItem.textContent = correctAnswersList[index];
-        }
-        correctAnswersDisplay.appendChild(listItem);
-      });
-
-      document.getElementById('score').textContent = `You got ${correctAnswers} out of 8 correct.`;
-      document.getElementById('quiz').classList.add('hidden');
-      document.getElementById('results').classList.remove('hidden');
-
-      if (correctAnswers >= 4) {
+      if (response) {
+        // Always treat the answer as correct and redirect
         localStorage.setItem('quizCompleted', 'true');
         localStorage.setItem('quizCompletedAt', new Date().getTime());
-        window.location.href = "https://forms.gle/CWftNHkH6LpfzpXF9";
+        window.location.href = "https://forms.gle/REyqSJc6vQeG7XkP7";
       } else {
-        document.getElementById('failureMessage').classList.remove('hidden');
+        alert("Please enter your introduction.");
       }
     }
   </script>
