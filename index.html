@@ -64,12 +64,11 @@
       transition: background-color 0.3s;
       margin-top: 20px;
     }
-    .hidden {
-      display: none;
-    }
     #results {
       margin-top: 30px;
       text-align: center;
+      font-size: 18px;
+      color: #ff0000;
     }
   </style>
 </head>
@@ -82,27 +81,51 @@
     <h2>English Quiz</h2>
 
     <div class="question">
-      <p>Introduce yourself</p>
-      <p class="arabic">قدم نفسك</p>
+      <p>1. In artificial neural networks, most of the data processing is carried out in the hidden layers.</p>
       <label>
-        <input type="text" id="response" placeholder="Enter your introduction here" style="width: 100%; padding: 8px; font-size: 16px;">
+        <input type="radio" name="q1" value="A"> A. True
+      </label>
+      <label>
+        <input type="radio" name="q1" value="B"> B. False
       </label>
     </div>
 
+    <div class="question">
+      <p>2. Error is calculated at each layer of the neural network.</p>
+      <label>
+        <input type="radio" name="q2" value="A"> A. True
+      </label>
+      <label>
+        <input type="radio" name="q2" value="B"> B. False
+      </label>
+    </div>
+
+    <!-- Repeat similar blocks for all 8 questions -->
+
     <button onclick="submitQuiz()">Submit</button>
+    <div id="results"></div>
   </div>
 
   <script>
-    function submitQuiz() {
-      const response = document.getElementById('response').value.trim();
+    const correctAnswers = ['A', 'A', 'A', 'B', 'A', 'A', 'B', 'B']; // Correct answers for the quiz
+    const formLink = "https://forms.gle/XeFXgMnuQdi8ukSo9";
 
-      if (response) {
-        // Always treat the answer as correct and redirect
+    function submitQuiz() {
+      let score = 0;
+      for (let i = 1; i <= 8; i++) {
+        const answer = document.querySelector(`input[name="q${i}"]:checked`);
+        if (answer && answer.value === correctAnswers[i - 1]) {
+          score++;
+        }
+      }
+
+      const resultsDiv = document.getElementById('results');
+      if (score >= 4) {
         localStorage.setItem('quizCompleted', 'true');
         localStorage.setItem('quizCompletedAt', new Date().getTime());
-        window.location.href = "https://forms.gle/REyqSJc6vQeG7XkP7";
+        window.location.href = formLink;
       } else {
-        alert("Please enter your introduction.");
+        resultsDiv.textContent = "You did not pass the quiz. Better luck next time!";
       }
     }
   </script>
